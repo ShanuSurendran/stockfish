@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        body{background-image:url("https://wallpaperboat.com/wp-content/uploads/2019/10/best-background-for-website-14.jpg");
+        height:100vh;
+        background-size:cover;
+        background-position:center;
+        }
+        .demo{width: 300px;margin: 100px auto 0px auto;}
+        h1{color:#ff9999;
+        font-familyTimes New Roman ;}
+        .login{background-color:rgba(0,0,0,0.5);
+         width:100%;font-size:
+         18px;border-radius:10px;
+        border:1px solid rgba(255,255,255,0.3);box-shadow:2px 2px 15px;
+        rgba(0,0,0,0.3);
+        text-align:center;
+        color:#fff;font-style:san-serif
+       }
+       input:focus{background-color:#ffb380}
+
+
+    </style>
+</head>
+<body>
+<div class="demo">
+    <div class="login">
+        <h1>Login Here</h1>
+        <form action="login" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Enter your username"><br>
+            <input type="password" name="password" placeholder="Enter your password"><br>
+            <button style="background-color:#8c8c8c">submit</button>
+        </form>
+        <div style="color:red">
+            {% for message in messages %}
+            {{message}}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
